@@ -49,7 +49,7 @@ class Controller(QMainWindow, Ui_MainWindow):
                                        f'\n'
                                        f'TOTAL: \n'
                                        f'\n'
-                                       f'# ITEMS SOLD = \n')
+                                       f'# ITEMS SOLD: \n')
 
             self.output_prices.setText(f'${cookie:.2f} \n'
                                        f'${sandwich:.2f} \n'
