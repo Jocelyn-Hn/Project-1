@@ -3,8 +3,6 @@ from view import *
 
 QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
 QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
-QApplication.setStyle(QStyleFactory.create("Fusion"))
-''' May or may not need this set style code. '''
 
 
 class Controller(QMainWindow, Ui_MainWindow):
