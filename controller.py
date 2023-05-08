@@ -7,12 +7,22 @@ QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 
 class Controller(QMainWindow, Ui_MainWindow):
     def __init__(self, *args, **kwargs):
+        """
+        Function to set up application object.
+        :param name: Controller
+        :param args:
+        :param kwargs:
+        """
         super().__init__(*args, **kwargs)
         self.setupUi(self)
         self.button_submit.clicked.connect(lambda: self.submit())
         self.button_clear.clicked.connect(lambda: self.clear())
 
     def submit(self):
+        """
+        Function that calculates the price amounts on user input.
+        :return:
+        """
         try:
             amount_cookie = float(self.input_cookie.text())
             amount_sandwich = float(self.input_sandwich.text())
@@ -66,14 +76,18 @@ class Controller(QMainWindow, Ui_MainWindow):
             self.output_prices.setText('')
             self.label_cartmenu.setText('- - - - - - - ERROR - - - - - - -')
             self.error_summary.setText(f'Quantity amounts \n'
-                                       f'need to be numeric \n'
-                                       f'and whole number values \n'
+                                       f'need to be numeric and \n'
+                                       f'whole number values \n'
                                        f'e.g. 3 not 3.5, 3 not \'e\' \n'
                                        f'\n'
                                        f'Put 0 for no quantity \n'
                                        f'desired.')
 
     def clear(self):
+        """
+        Function that resets application.
+        :return:
+        """
         self.label_cartmenu.setText('')
         self.error_summary.setText('')
         self.output_labels.setText('')
